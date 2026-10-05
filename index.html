@@ -452,6 +452,111 @@
         dialog { width: calc(100vw - 16px); } .dialog-body { padding: 16px; } .creator-footer { margin: 32px -12px -12px; }
         .unit-card .nums { grid-template-columns: repeat(2, 1fr); }
     }
+    .tab .ts { display: none; }
+
+    /* ===================== Phones ===================== */
+    @media (max-width: 700px) {
+        body { padding: 10px 10px calc(84px + env(safe-area-inset-bottom)); background-attachment: scroll; }
+        /* Compact header */
+        header.hero { padding: 14px 16px; border-radius: 18px; gap: 10px; flex-wrap: nowrap; margin-bottom: 10px; }
+        .hero-bg { border-radius: 18px; }
+        header.hero .logo { width: 42px; height: 42px; border-radius: 12px; }
+        header.hero .logo .i { width: 22px; height: 22px; }
+        header.hero .eyebrow, header.hero .subtitle, .hero-date { display: none; }
+        header.hero h1 { font-size: 17px; margin: 0; line-height: 1.2; }
+        .brand { gap: 10px; }
+        .hero-meta { margin-left: auto !important; flex: none; }
+        .hero-greet { display: none; }
+        .user-btn { width: 40px; height: 40px; }
+        .user-pop { top: 48px; }
+        /* Unit and month on two tidy rows */
+        .ribbon { padding: 10px 12px; margin: 0 0 12px; gap: 8px; }
+        .ribbon .grp { width: 100%; flex-wrap: nowrap; }
+        .ribbon .lbl { width: 46px; flex: none; font-size: 11px; }
+        .ribbon .seg { flex: 1; display: flex; }
+        .ribbon .seg button { flex: 1; padding: 8px 6px; }
+        #monthSel { flex: 1; min-width: 0; }
+        /* App-style bottom navigation */
+        .tabs { position: fixed; left: 0; right: 0; bottom: 0; top: auto; margin: 0; z-index: 900; border-radius: 18px 18px 0 0; padding: 6px 6px calc(6px + env(safe-area-inset-bottom)); gap: 2px; background: rgba(255, 255, 255, .97); box-shadow: 0 -8px 24px rgba(19, 36, 29, .12); scrollbar-width: none; }
+        .tabs::-webkit-scrollbar { display: none; }
+        .tab { position: relative; flex-direction: column; gap: 3px; padding: 7px 4px; min-width: 64px; font-size: 10.5px; border-radius: 12px; }
+        .tab .i { width: 21px; height: 21px; }
+        .tab .tl { display: none; }
+        .tab .ts { display: block; }
+        .tab .tab-count { position: absolute; top: 2px; right: 8px; min-width: 16px; height: 16px; font-size: 9.5px; padding: 0 4px; }
+        /* Cards and figures */
+        .card { padding: 14px; border-radius: 16px; margin-bottom: 12px; }
+        .card h2 { font-size: 16px; }
+        .section-head { margin-bottom: 12px; gap: 10px; }
+        .section-head .controls { width: 100%; }
+        .section-head .controls .btn { flex: 1 1 auto; justify-content: center; }
+        .kpi-grid { grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+        .kpi { padding: 12px; gap: 8px; flex-direction: column; align-items: flex-start; }
+        .kpi-ico { width: 34px; height: 34px; border-radius: 10px; }
+        .kpi-ico .i { width: 18px; height: 18px; }
+        .kpi-value { font-size: 18px; }
+        .kpi-label { font-size: 11.5px; }
+        .kpi-sub { font-size: 10.5px; }
+        .stats-grid { grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px; }
+        .stat { padding: 10px 12px; }
+        .stat-value { font-size: 17px; }
+        .stat-label { font-size: 11.5px; }
+        .unit-strip { gap: 10px; margin-bottom: 14px; }
+        .unit-card { padding: 14px; }
+        .unit-card .nums { grid-template-columns: repeat(4, 1fr); gap: 4px; }
+        .unit-card .nums b { font-size: 15px; }
+        .unit-card .nums span { font-size: 10px; }
+        .quick-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+        .quick-row .btn { justify-content: center; padding: 10px 8px; font-size: 13px; white-space: normal; text-align: center; }
+        .chart-container { height: 230px; }
+        .dash-grid { gap: 12px; }
+        .subtabs { margin-bottom: 12px; }
+        .alert-item { flex-wrap: wrap; }
+        .alert-item .t { flex: 1 1 calc(100% - 50px); }
+        .alert-item .btn { margin-left: 46px; }
+        input[type="search"] { min-width: 0; width: 100%; }
+        .controls > input[type="search"], .controls > select { flex: 1 1 100%; }
+        .pipeline { display: grid; grid-template-columns: 1fr 1fr; }
+        .pipe-arrow { display: none; }
+        .pipe-side { grid-column: 1 / -1; flex-direction: row; flex-wrap: wrap; }
+        .qo-fields { grid-template-columns: 1fr 1fr; }
+        .qo-fields label:first-child, .qo-fields label:nth-child(2) { grid-column: 1 / -1; }
+        .qo-btns .btn { flex: 1; justify-content: center; }
+        .mcard-nums b { font-size: 15px; }
+        .machine-grid { grid-template-columns: 1fr; }
+        .mc-steps { grid-template-columns: 1fr; }
+        .manual-toc { display: none; }
+        .creator-footer { margin: 24px -10px -10px; }
+        dialog { width: 100vw; max-width: 100vw; max-height: 92vh; margin: auto 0 0; border-radius: 20px 20px 0 0; }
+        .dialog-foot .btn { flex: 1; justify-content: center; }
+        .toast { bottom: calc(90px + env(safe-area-inset-bottom)); }
+
+        /* Tables turn into cards: one card per row, each value with its column name */
+        .table-wrap:has(table.data) { border: none; background: transparent; overflow: visible; }
+        .table-wrap.tall:has(table.data) { max-height: none; }
+        table.data, table.data tbody, table.data tfoot, table.data tr, table.data td { display: block; width: 100%; }
+        table.data thead { display: none; }
+        table.data tr { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 10px 12px; margin-bottom: 10px; box-shadow: var(--shadow-sm); }
+        table.data tbody tr:hover { background: #fff; }
+        table.data td { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 5px 0; border: none; white-space: normal; text-align: right; min-width: 0; }
+        table.data td::before { content: attr(data-label); flex: none; max-width: 48%; text-align: left; font-size: 11.5px; font-weight: 600; color: var(--ink-soft); text-transform: uppercase; letter-spacing: .03em; }
+        table.data td:not([data-label])::before, table.data td[data-label=""]::before { content: none; }
+        table.data td:first-child { font-size: 14.5px; justify-content: flex-start; text-align: left; border-bottom: 1px dashed var(--line); padding-bottom: 8px; margin-bottom: 4px; }
+        table.data td:first-child::before { content: none; }
+        table.data td:empty, table.data td.empty-cell { display: none; }
+        table.data td > * { max-width: 100%; }
+        table.data td .btn { white-space: nowrap; }
+        table.data td input, table.data td select { max-width: 60%; }
+        table.data tfoot tr { background: #eef5f0; }
+        table.data tfoot td { background: transparent; border: none; }
+        table.data tr.group, table.data tr.unit-row { background: transparent; border: none; box-shadow: none; padding: 6px 2px 0; margin: 0; }
+        table.data tr.unit-row td, table.data tr.group td { background: transparent; border: none; justify-content: flex-start; font-size: 12.5px; }
+        table.data.orders-table tr { position: relative; }
+        table.data.orders-table td:first-child { position: absolute; top: 12px; right: 12px; width: auto; border: none; padding: 0; margin: 0; }
+        table.data.orders-table td:first-child input { width: 20px; height: 20px; }
+        table.data.orders-table td:nth-child(2) { font-size: 14.5px; justify-content: flex-start; text-align: left; border-bottom: 1px dashed var(--line); padding: 0 30px 8px 0; margin-bottom: 4px; }
+        table.data.orders-table td:nth-child(2)::before { content: none; }
+    }
     @media print { .tabs, header.hero, .ribbon, .creator-footer, .btn { display: none !important; } body { background: #fff; padding: 0; } }
     @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
 </style>
@@ -542,16 +647,16 @@
     </div>
 
     <nav class="tabs" id="tabs">
-        <button class="tab" data-tab="dashboard" onclick="showTab('dashboard')"><svg class="i"><use href="#i-dashboard"/></svg>Dashboard<span class="tab-count" id="cnt-dashboard"></span></button>
-        <button class="tab" data-tab="production" onclick="showTab('production')"><svg class="i"><use href="#i-factory"/></svg>Production</button>
-        <button class="tab" data-tab="inventory" onclick="showTab('inventory')"><svg class="i"><use href="#i-box"/></svg>Inventory<span class="tab-count" id="cnt-inventory"></span></button>
-        <button class="tab" data-tab="orders" onclick="showTab('orders')"><svg class="i"><use href="#i-truck"/></svg>Orders &amp; Dispatch<span class="tab-count" id="cnt-orders"></span></button>
-        <button class="tab" data-tab="machines" onclick="showTab('machines')"><svg class="i"><use href="#i-cog"/></svg>Machines<span class="tab-count" id="cnt-machines"></span></button>
-        <button class="tab" data-tab="quality" onclick="showTab('quality')"><svg class="i"><use href="#i-shield"/></svg>Quality &amp; Compliance</button>
-        <button class="tab" data-tab="people" onclick="showTab('people')"><svg class="i"><use href="#i-users"/></svg>Attendance &amp; Payroll</button>
-        <button class="tab" data-tab="reports" onclick="showTab('reports')"><svg class="i"><use href="#i-download"/></svg>Reports</button>
-        <button class="tab" data-tab="settings" onclick="showTab('settings')"><svg class="i"><use href="#i-settings"/></svg>Settings</button>
-        <button class="tab" data-tab="manual" onclick="showTab('manual')"><svg class="i"><use href="#i-book"/></svg>User Manual</button>
+        <button class="tab" data-tab="dashboard" onclick="showTab('dashboard')"><svg class="i"><use href="#i-dashboard"/></svg><span class="tl">Dashboard</span><span class="ts">Home</span><span class="tab-count" id="cnt-dashboard"></span></button>
+        <button class="tab" data-tab="production" onclick="showTab('production')"><svg class="i"><use href="#i-factory"/></svg><span class="tl">Production</span><span class="ts">Production</span></button>
+        <button class="tab" data-tab="inventory" onclick="showTab('inventory')"><svg class="i"><use href="#i-box"/></svg><span class="tl">Inventory</span><span class="ts">Stock</span><span class="tab-count" id="cnt-inventory"></span></button>
+        <button class="tab" data-tab="orders" onclick="showTab('orders')"><svg class="i"><use href="#i-truck"/></svg><span class="tl">Orders &amp; Dispatch</span><span class="ts">Orders</span><span class="tab-count" id="cnt-orders"></span></button>
+        <button class="tab" data-tab="machines" onclick="showTab('machines')"><svg class="i"><use href="#i-cog"/></svg><span class="tl">Machines</span><span class="ts">Machines</span><span class="tab-count" id="cnt-machines"></span></button>
+        <button class="tab" data-tab="quality" onclick="showTab('quality')"><svg class="i"><use href="#i-shield"/></svg><span class="tl">Quality &amp; Compliance</span><span class="ts">Quality</span></button>
+        <button class="tab" data-tab="people" onclick="showTab('people')"><svg class="i"><use href="#i-users"/></svg><span class="tl">Attendance &amp; Payroll</span><span class="ts">People</span></button>
+        <button class="tab" data-tab="reports" onclick="showTab('reports')"><svg class="i"><use href="#i-download"/></svg><span class="tl">Reports</span><span class="ts">Reports</span></button>
+        <button class="tab" data-tab="settings" onclick="showTab('settings')"><svg class="i"><use href="#i-settings"/></svg><span class="tl">Settings</span><span class="ts">Settings</span></button>
+        <button class="tab" data-tab="manual" onclick="showTab('manual')"><svg class="i"><use href="#i-book"/></svg><span class="tl">User Manual</span><span class="ts">Help</span></button>
     </nav>
 
     <!-- Dashboard -->
@@ -1751,6 +1856,10 @@ function showTab(name) {
     try { localStorage.setItem(TAB_KEY, name); } catch (e) { /* ignore */ }
     if (location.hash !== '#' + name) history.replaceState(null, '', '#' + name);
     if (currentUser) RENDER[name]();
+    if (started && window.matchMedia('(max-width: 700px)').matches) {
+        window.scrollTo(0, 0);
+        document.querySelector('.tab.active')?.scrollIntoView({ inline: 'center', block: 'nearest' });
+    }
 }
 
 function refresh() {
@@ -4724,6 +4833,44 @@ async function deleteUser(id) {
 setInterval(() => { if (currentUser && Date.now() - lastActivity > IDLE_MINUTES * 60000) lockApp('idle'); }, 15000);
 document.addEventListener('click', e => { if (!e.target.closest('.user-menu')) document.getElementById('userPop').classList.remove('open'); });
 window.addEventListener('hashchange', () => { if (currentUser) showTab(location.hash.slice(1)); });
+
+// ---------------------------------------------------------------- phone layout helpers
+// On phones every table.data row is shown as a card; each cell gets its column name as data-label.
+function columnLabels(table) {
+    const rows = [...(table.tHead?.rows || [])];
+    if (!rows.length) return [];
+    const grid = [];
+    rows.forEach((tr, r) => {
+        let c = 0;
+        [...tr.cells].forEach(th => {
+            while (grid[r]?.[c] !== undefined) c++;
+            const text = th.textContent.trim();
+            for (let i = 0; i < (th.rowSpan || 1); i++) for (let j = 0; j < (th.colSpan || 1); j++) ((grid[r + i] ||= [])[c + j]) = text;
+            c += th.colSpan || 1;
+        });
+    });
+    const n = Math.max(...grid.map(r => r.length));
+    return Array.from({ length: n }, (_, c) => [...new Set(grid.map(r => r[c]).filter(Boolean))].join(' '));
+}
+function labelTables(root = document) {
+    root.querySelectorAll('table.data').forEach(table => {
+        const labels = columnLabels(table);
+        if (!labels.length) return;
+        [...table.tBodies, ...(table.tFoot ? [table.tFoot] : [])].forEach(sec => [...sec.rows].forEach(tr => {
+            let c = 0;
+            [...tr.cells].forEach(td => {
+                if (td.colSpan === 1 && !td.hasAttribute('data-label')) td.setAttribute('data-label', labels[c] || '');
+                c += td.colSpan || 1;
+            });
+        }));
+    });
+}
+let labelQueued = false;
+new MutationObserver(() => {
+    if (labelQueued) return;
+    labelQueued = true;
+    requestAnimationFrame(() => { labelQueued = false; labelTables(); });
+}).observe(document.body, { childList: true, subtree: true });
 
 // ---------------------------------------------------------------- footer & boot
 (function renderCreator() {
