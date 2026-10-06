@@ -630,6 +630,7 @@
                         <button onclick="document.getElementById('userPop').classList.remove('open'); showTab('manual')"><svg class="i"><use href="#i-book"/></svg> User manual</button>
                         <button onclick="openSettings('log')"><svg class="i"><use href="#i-receipt"/></svg> Activity log</button>
                         <button onclick="openSettings('company')"><svg class="i"><use href="#i-settings"/></svg> Settings</button>
+                        <button onclick="window.open('https://vigneshannamalai-ai.github.io/we-create-erp/#/connect', '_blank', 'noopener')"><svg class="i"><use href="#i-receipt"/></svg> We Create ERP (accounts)</button>
                         <button onclick="lockApp()"><svg class="i"><use href="#i-unlock"/></svg> Sign out / Switch user</button>
                     </div>
                 </div>
@@ -680,6 +681,14 @@
             <div data-perm="tab.machines" class="card span-6"><h2>Machine Utilisation · <span class="mlabel"></span></h2><p class="section-desc" style="margin-bottom: 10px;">Running hours against two 8-hour shifts per working day.</p><div class="chart-container"><canvas id="chUtil"></canvas></div></div>
             <div data-perm="tab.orders" class="card span-6"><h2>Deliveries Due</h2><div id="dueList"></div></div>
             <div data-perm="tab.inventory" class="card span-6"><h2>Raw Material Cover</h2><p class="section-desc" style="margin-bottom: 10px;">Days of stock left at the last 30 days' usage.</p><div id="coverList"></div></div>
+        </div>
+        <div class="card erp-card" data-perm="tab.reports" style="margin-top:18px">
+            <h2><svg class="i"><use href="#i-receipt"/></svg> Accounts in We Create ERP</h2>
+            <p class="section-desc" style="margin-bottom:12px">This dashboard feeds the Eco Pack company in We Create ERP: products and materials with opening stock, customers, every dispatched order as a GST sales invoice (same invoice number), customer payments, raw-material purchases (add each supplier's GSTIN once in the ERP), daily production at cost, paid machine repairs and payroll. The ERP then prepares GSTR-1, GSTR-3B, TDS and the P&amp;L, Balance Sheet and Cash Flow. In this browser it syncs automatically when the Eco Pack company opens; on another computer, download the data file and load it in the ERP.</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
+                <a class="btn btn-primary" href="https://vigneshannamalai-ai.github.io/we-create-erp/#/connect" target="_blank" rel="noopener" style="text-decoration:none"><svg class="i"><use href="#i-globe"/></svg> Open We Create ERP</a>
+                <button class="btn btn-secondary" onclick="exportBackup()"><svg class="i"><use href="#i-download"/></svg> Download data for the ERP</button>
+            </div>
         </div>
     </section>
 
