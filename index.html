@@ -68,7 +68,7 @@
     .user-pop .who { padding: 10px 12px 12px; border-bottom: 1px solid var(--line); margin-bottom: 6px; }
     .user-pop .who b { display: block; font-size: 15px; }
     .user-pop .who span { font-size: 12px; color: var(--ink-soft); }
-    .user-pop button { display: flex; align-items: center; gap: 10px; width: 100%; border: none; background: none; padding: 10px 12px; border-radius: 9px; font: inherit; font-size: 14px; cursor: pointer; color: var(--ink); }
+    .user-pop button { display: flex; align-items: center; gap: 10px; width: 100%; text-align: left; border: none; background: none; padding: 10px 12px; border-radius: 9px; font: inherit; font-size: 14px; cursor: pointer; color: var(--ink); }
     .user-pop button:hover { background: var(--primary-soft); color: var(--primary); }
 
     /* Unit / month ribbon */
@@ -630,7 +630,7 @@
                         <button onclick="document.getElementById('userPop').classList.remove('open'); showTab('manual')"><svg class="i"><use href="#i-book"/></svg> User manual</button>
                         <button onclick="openSettings('log')"><svg class="i"><use href="#i-receipt"/></svg> Activity log</button>
                         <button onclick="openSettings('company')"><svg class="i"><use href="#i-settings"/></svg> Settings</button>
-                        <button onclick="window.open('https://vigneshannamalai-ai.github.io/we-create-erp/#/open/ecopack', '_blank', 'noopener')"><svg class="i"><use href="#i-receipt"/></svg> We Create ERP (accounts)</button>
+                        <button onclick="window.open('https://vigneshannamalai-ai.github.io/we-create-erp/#/open/ecopack', '_blank', 'noopener')"><svg class="i"><use href="#i-receipt"/></svg> We Create ERP</button>
                         <button onclick="lockApp()"><svg class="i"><use href="#i-unlock"/></svg> Sign out / Switch user</button>
                     </div>
                 </div>
